@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #b3ebf2;
+    font-family: "Lexend Giga", serif;
+    font-size: 8pt;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.home-bg {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    background-color: #FF6961;
+    width: 50%;
+}
+
+.away-bg {
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background-color: #b3ebf2;
+    width: 50%;
+}
+
+
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    width: 10%;
+    padding: 1em;
+    background-color: #F9FAFB;
+    border-radius: 10000px;
+    aspect-ratio: 1;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.home-score {
+    transform: translate(0, 30%);
+    color: #FF6961;
+}
+
+.away-score {
+    transform: translate(0, 30%);
+    color: #b3ebf2;
+}
+
+.dot {
+    margin: -2em;
+    transform: translate(0, 30%);
+}
+
+#ball-el {
+    width: 15%;
+    background-color: #F9FAFB;
+    border-radius: 10000px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: left 0.3s ease-in-out;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.score-button {
+    background-color: transparent;
+    color: transparent;
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
