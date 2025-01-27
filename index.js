@@ -4,8 +4,15 @@ let ballEl = document.getElementById("ball-el")
 
 let homeScore = 0
 let awayScore = 0
+
 let serve = "home"
 let serveCount = 1
+
+let homeSet = 0
+let awaySet = 0
+
+let firstToPoint = 11
+let firstToSet = 3
 
 function pointToHome() {
     homeScore += 1
@@ -37,7 +44,6 @@ function changeServer() {
 }
 
 function served() {
-    
     if (serveCount <= 1) {
         serveCount += 1
     } else {
@@ -45,6 +51,33 @@ function served() {
         changeServer()
     }
     
+    if (homeScore >= firstToPoint) {
+        if (homeScore - awayScore >= 2){
+            console.log("home wins")
+            homeScore = 0
+            homeScoreEl.innerText = homeScore
+            awayScore = 0
+            awayScoreEl.innerText = awayScore
+            homeSet += 1
+            serve = "away"
+            serveCount = 1
+            setServer()
+        }
+    }
+
+    if (awayScore >= firstToPoint) {
+        if (awayScore - homeScore >= 2){
+            console.log("away wins")
+            homeScore = 0
+            homeScoreEl.innerText = homeScore
+            awayScore = 0
+            awayScoreEl.innerText = awayScore
+            awaySet += 1
+            serve = "home"
+            serveCount = 1
+            setServer()
+        }
+    }
 }
 
 setServer()

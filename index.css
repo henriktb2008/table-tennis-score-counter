@@ -1,14 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&display=swap');
 
+:root {
+    --home-color: 236, 40, 63;
+    --away-color: 50, 136, 222;
+    --light-color: 249, 250, 251;
+    --dark-color: 32, 33, 36;
+}
+
+
 body {
     margin: 0;
-    background-color: #b3ebf2;
+    background-color: rgb(var(--light-color));
     font-family: "Lexend Giga", serif;
-    font-size: 8pt;
     overflow: hidden;
+    font-size: 1.25vw;
 }
 
 h1 {
+    font-size: 8rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
     font-size: 2rem;
 }
 
@@ -16,51 +32,91 @@ h1 {
     position: absolute;
     left: 0;
     height: 100%;
-    background-color: #FF6961;
+    background-color: rgb(var(--home-color));
     width: 50%;
+    transition: all ease-in-out 0.3s;
 }
 
 .away-bg {
     position: absolute;
     right: 0;
     height: 100%;
-    background-color: #b3ebf2;
+    background-color: rgb(var(--away-color));
     width: 50%;
+    transition: all ease-in-out 0.3s;
 }
 
+.win-screen {
+    width: 100%;
+    z-index: 5;
+}
 
 .score-container {
     display: flex;
     justify-content: space-around;
-    width: 10%;
-    padding: 1em;
-    background-color: #F9FAFB;
-    border-radius: 10000px;
-    aspect-ratio: 1;
+    width: 10vw;
+    padding-inline: 1.25vw;
+    padding-top: 2vw;
+    background-color: rgb(var(--light-color));
+    border-radius: 12px;
+    aspect-ratio: 2/1;
     align-items: center;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
 }
 
 .home-score {
-    transform: translate(0, 30%);
-    color: #FF6961;
+    position: absolute;
+    padding-right: 6vw;
+    color: rgb(var(--home-color));
 }
 
 .away-score {
-    transform: translate(0, 30%);
-    color: #b3ebf2;
+    position: absolute;
+    padding-left: 6vw;
+    color: rgb(var(--away-color));
+}
+
+.set-bg {
+    position: fixed;
+    background-color: rgba(var(--dark-color), 0.2);
+    bottom: 0;
+    padding-inline: 1.25vw;
+    padding-bottom: 2vw;
+    z-index: 1;
+    width: 40vw;
+    transform: translate(-50%, 25%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.home-set {
+    left: 25%;
+}
+
+.away-set {
+    left: 75%;
+}
+
+.set-count {
+    color: rgb(var(--light-color));
+    height: 100%;
+    width: 100%;
+    line-height: 70%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 .dot {
-    margin: -2em;
-    transform: translate(0, 30%);
+    position: absolute;
+    color: rgb(var(--dark-color));
 }
 
 #ball-el {
-    width: 15%;
-    background-color: #F9FAFB;
+    width: 15vw;
+    background-color: rgb(var(--light-color));
     border-radius: 10000px;
     aspect-ratio: 1;
     position: absolute;
