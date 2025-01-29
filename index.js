@@ -2,6 +2,9 @@ let homeScoreEl = document.getElementById("home-score-el")
 let awayScoreEl = document.getElementById("away-score-el")
 let ballEl = document.getElementById("ball-el")
 
+let homeSetEl = document.getElementById("home-set-el")
+let awaySetEl = document.getElementById("away-set-el")
+
 let homeScore = 0
 let awayScore = 0
 
@@ -59,6 +62,7 @@ function served() {
             awayScore = 0
             awayScoreEl.innerText = awayScore
             homeSet += 1
+            homeSetEl.innerText += "•"
             serve = "away"
             serveCount = 1
             setServer()
@@ -73,6 +77,7 @@ function served() {
             awayScore = 0
             awayScoreEl.innerText = awayScore
             awaySet += 1
+            awaySetEl.innerText += "•"
             serve = "home"
             serveCount = 1
             setServer()
